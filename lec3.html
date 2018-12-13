@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- meta tags and title -->
+    <meta charset="utf-8" />
+    <title>Example Website</title>
+
+    <!-- custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet"> 
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- any tag goes here -->
+    <div id="output_div"></div>
+    <span id="output_span"></span>
+
+    <!-- we need this tag for js -->
+    <script charset="utf-8">
+
+        let outdiv = document.getElementById("output_div"); // output div
+        let hemoglobin = 11; // g/dl
+        let gender = 'm'; // m = male, f = female
+
+        function changeDiv(div, str) {
+            div.innerHTML += str; 
+        }
+        for (let i = 0; i < 10000; i++) {
+            if (hemoglobin <= 8 && gender === 'm') {
+                changeDiv(outdiv, "transfusion?<br>");
+            } else if (hemoglobin <= 12 && gender === 'm') {
+                changeDiv(outdiv, "anemia?<br>");
+            }
+        }
+
+    </script>
+</body>
+</html>
