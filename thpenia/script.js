@@ -15,6 +15,10 @@ function thrombopenia(count, schisto, hemo, crea, temp) {
     if (count == null) {
         console.log("give me a platelet count");
     }
+
+    if (count > 1000000) {
+        return "whouuut?"
+    }
     // test if platelet count is below threshold
     if (count < 150000) {
         // doesn't currently discriminate between male/female
