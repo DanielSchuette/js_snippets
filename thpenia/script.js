@@ -1,50 +1,8 @@
 /*
- * thrombopenia: A simple function that suggests a diagnose
- * for patients with thrombopenia and certain
- * other lab parameters.
- * parameters:
- *  count    - platelet count (/µl)
- *  schisto  - schistocytes?
- *  hemo     - hemoglobin (mg/dl)
- *  crea     - creatinine (mg/dl)
- *  temp     - body temperature (°C)
+ * business logic of the thrombopenia analyzer
  */
-function thrombopenia(count, schisto, hemo, crea, temp) {
-    // return a warning message if no values were provided
-    if (count === null) {
-        console.log("give me a platelet count");
-    }
-
-    // return a warning message if a high count is provided
-    if (count > 1000000) {
-        return "is "+count+" a reasonable value?"
-    }
-
-    // test if platelet count is below threshold
-    if (count < 150000) {
-        // TODO: doesn't currently discriminate between
-        // male/female patients
-        if (schisto && (hemo < 13.5) && (crea >= 1.1) &&
-            temp >= 38.0) {
-            return "TTP"
-        }
-
-        // Evans syndrome has low platelets and an auto-
-        // immune hemolytic anaemia (but w/o schistocytes)
-        if (!schisto && (hemo < 13.5)) {
-            return "Evans syndrome"
-        }
-        if (!schisto && (hemo > 13.5) && (crea <= 1.0) &&
-            temp < 38.0) {
-            return "ITP"
-        }
-        return "unclear" /* none of the scenarios were true */
-    }
-    return "normal" /* probably not reliable */
-}
-
-let p_res;              /* must be global */
-let debugging = true;   /* set to false to disable console logging */
+let p_res;                  /* must be global */
+let debugging = false;      /* set to true to disable console logging */
 p_res = document.getElementById("result_display"); /* index.html */
 
 /* parseForm(): works in concert with the form in index.html */
@@ -75,7 +33,11 @@ function parseForm() {
     // TODO: do some input validation to check if all
     // inputs are reasonable values
 
-    // calculate ddx and show the result in index.html
-    let res = thrombopenia(thrombo, schisto, hemo, crea, temp);
+    // calculate DDX
+    lab = new Lab(new Date(), thrombo, schisto, hemo, crea, temp);
+    lab.logValues();
+
+    // show the result in index.html
+    let res = lab.thrombopenia();
     p_res.innerHTML = res;
 }
