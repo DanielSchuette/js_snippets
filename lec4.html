@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Lecture 4</title>
+</head>
+<body>
+    <h1>Lecture 4</h1>
+    <script charset="utf-8">
+        class Dog {
+            // constructor function to assigns initial properties
+            constructor(sound) {
+                this.sound = sound;
+            }
+
+            // talk() method that logs the dog's sounds
+            talk() {
+                console.log(this.sound);
+            }
+        }
+
+        dog1 = new Dog("bark");
+        dog2 = new Dog("wuff");
+        dog1.talk();
+        dog2.talk();
+    </script>
+</body>
+</html>

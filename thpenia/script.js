@@ -11,7 +11,7 @@
  */
 function thrombopenia(count, schisto, hemo, crea, temp) {
     // return a warning message if no values were provided
-    if (count == null) {
+    if (count === null) {
         console.log("give me a platelet count");
     }
 
@@ -57,7 +57,7 @@ function parseForm() {
     let crea = document.getElementById("creatinine").value;
     let temp = document.getElementById("temperature").value;
 
-    if (schisto_1 == true) {
+    if (schisto_1 === true) {
         schisto = true;
     } else {
         schisto = false;
