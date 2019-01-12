@@ -2,7 +2,7 @@
  * business logic of the thrombopenia analyzer
  */
 let p_res;                  /* must be global */
-let debugging = false;      /* set to true to disable console logging */
+let debugging = false;      /* set to true to enable console logging */
 p_res = document.getElementById("result_display"); /* index.html */
 
 /* parseForm(): works in concert with the form in index.html */
