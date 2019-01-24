@@ -44,7 +44,7 @@ class Lab {
 
         // return a warning message if a high count is provided
         if (this.count > 1000000) {
-            return "is "+this.count+" a reasonable value?"
+            return "is "+this.count+" a reasonable value?";
         }
 
         // test if platelet count is below threshold
@@ -53,7 +53,7 @@ class Lab {
             // male/female patients
             if (this.schisto && (this.hemo < 13.5) &&
                 (this.crea >= 1.1) && this.temp >= 38.0) {
-                return "TTP"
+                return "TTP";
             }
 
             // Evans syndrome has low platelets and an auto-
@@ -63,10 +63,10 @@ class Lab {
             }
             if (!this.schisto && (this.hemo > 13.5) &&
                 (this.crea <= 1.0) && this.temp < 38.0) {
-                return "ITP"
+                return "ITP";
             }
-            return "unclear"    /* none of the scenarios were true */
+            return "unclear";    /* none of the scenarios were true */
         }
-        return "normal"         /* probably not reliable */
+        return "normal";        /* probably not reliable */
     }
 }
