@@ -2,7 +2,7 @@
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": false
     },
     "extends": "eslint:recommended",
     "parserOptions": {
@@ -12,7 +12,7 @@
     "rules": {
         "indent": [
             "error",
-            "tab"
+            4
         ],
         "linebreak-style": [
             "error",
