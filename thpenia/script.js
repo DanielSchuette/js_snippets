@@ -27,7 +27,7 @@ function parseForm() {
             "schistocytes: ", schisto, "\n",
             "hemoglobin: ", hemo, "\n",
             "creatinine: ", crea, "\n",
-            "temperature: ", temp)
+            "temperature: ", temp);
     }
 
     // TODO: do some input validation to check if all

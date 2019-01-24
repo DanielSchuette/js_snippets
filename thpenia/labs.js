@@ -59,7 +59,7 @@ class Lab {
             // Evans syndrome has low platelets and an auto-
             // immune hemolytic anaemia (but w/o schistocytes)
             if (!this.schisto && (this.hemo < 13.5)) {
-                return "Evans syndrome"
+                return "Evans syndrome";
             }
             if (!this.schisto && (this.hemo > 13.5) &&
                 (this.crea <= 1.0) && this.temp < 38.0) {
@@ -67,6 +67,6 @@ class Lab {
             }
             return "unclear";    /* none of the scenarios were true */
         }
-        return "normal";        /* probably not reliable */
+        return "normal";         /* probably not reliable */
     }
 }
