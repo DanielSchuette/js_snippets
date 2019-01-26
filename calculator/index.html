@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <style></style>
+    </head>
+    <body>
+        <input type="text" id="counter" value="0"></input>
+        <table>
+            <tr>
+                <td><button onclick="counterObj.inc()">Inc</button></td>
+                <td><button onclick="counterObj.dec()">Dec</button></td>
+                <td><button onclick="counterObj.reset()">Reset</button></td>
+            </tr>
+        </table>
+        <script>
+            const counterObj = {
+                counter: 0,
+                counterSpan: document.getElementById("counter"),
+                inc: function() {
+                    this.counter++;
+                    this.counterSpan.value = this.counter;
+                },
+                dec: function() {
+                    this.counter--;
+                    this.counterSpan.value = this.counter;
+                },
+                reset: function() {
+                    this.counter = 0;
+                    this.counterSpan.value = this.counter;
+
+                }
+            };
+
+            /* initially, reset the calculator */
+            counterObj.reset();
+        </script>
+    </body>
+</html>
