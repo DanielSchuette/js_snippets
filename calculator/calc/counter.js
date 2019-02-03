@@ -1,34 +1,25 @@
-let storedNumbers = [];
-let wert = 5000;
-let i = 1;
-
-storedNumbers[i] = 5000;
-storedNumbers.push(5000);
-
-let summe = 0;
-for (let j = 0; j < storedNumbers.length; j++){
-    summe = summe + storedNumbers[j];
-}
-
 let counter = {
-        number: "0",
-        plus: function(){
+        number: 0,
+        plus: () => {
             this.number++;
-            document.getElementById("userinput").value=this.number;
+            document.getElementById("userinput").value = this.number;
         },
-        minus:function(){
+        minus: () => {
             this.number--;
-            document.getElementById("userinput").value=this.number;
-        }   ,
-        ac:function(){
-            this.number=0;
-            document.getElementById("userinput").value=this.number;
+            document.getElementById("userinput").value = this.number;
         },
-        keystroke: function(el){
-            if(document.getElementById("userinput").value == "0"){
-                document.getElementById("userinput").value = "";
-            }
-            document.getElementById("userinput").value = document.getElementById("userinput").value + el.value;
+        ac: () => {
+            this.number = 0;
+            document.getElementById("userinput").value = this.number;
+        },
+        keystroke: button => {
+            let elem = document.getElementById("userinput");
+            /* don't append to zero */
+            if (elem.value == "0")
+                elem.value = "";
+
+            /* append the buttons value to the content of input */
+            elem.value = elem.value + button.value;
         },
         hallo: () => alert("Hallo"),
 };
