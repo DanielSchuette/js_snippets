@@ -2,6 +2,8 @@
  * A simple calculator implementation.
  * To make this app useful, it should be re-
  * written as a stack machine.
+ * TODO: fix bugs! Only first digit of a second
+ * number gets added.
  */
 let calc = {
     value: 0,
@@ -60,3 +62,21 @@ let calc = {
 
 // initialize the calculator display
 document.getElementById("calc-display").value = 0;
+
+// register key handlers
+document.onkeydown = function(ev) {
+    // some browsers don't pass an event and the key press
+    // is stored as an attribute of the window (`ev' will
+    // be undefined in that case).
+    ev = ev || window.event;
+
+    // capture enter key stroke
+    if (ev.keyCode === 13) {
+        calc.eql();
+    }
+
+    // capture delete keys (ref: https://unixpapa.com/js/key.html)
+    if (ev.keyCode === 46 || ev.keyCode === 8) {
+        calc.ac();
+    }
+};
