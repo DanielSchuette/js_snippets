@@ -1,69 +1,46 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<script src="./counter.js" type="text/javascript"></script>
-<input type="text" value="0"
-    id="userinput" style="text-align:center">
-<table>
-    <tr>
-        <td>
-            <input type="button" value="+"
-                onclick="counter.plus()">
+<head>
+    <!-- calculator styles -->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+</head>
+<body>
+    <div class="float-left">
+        <div class="centered">
+            <input id="calc-display" type="text" style="text-align:center" disabled="disabled">
+        </div>
+        <div class="centered">
+            <table class="calc-menu">
+                <tr>
+                    <td><input class="calc-button" type="button" value="+" onclick="calc.plus();"></td>
+                    <td><input class="calc-button" type="button" value="-" onclick="calc.minus();"></td>
+                    <td><input class="calc-button" type="button" value="C" onclick="calc.ac();"></td>
+                </tr>
+                <tr>
+                    <td><input class="calc-button" type="button" value="1" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="2" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="3" onclick="calc.keystroke(this)"></td>
+                </tr>
+                <tr>
+                    <td><input class="calc-button" type="button" value="4" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="5" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="6" onclick="calc.keystroke(this)"></td>
+                </tr>
+                <tr>
+                    <td><input class="calc-button" type="button" value="7" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="8" onclick="calc.keystroke(this)"></td>
+                    <td><input class="calc-button" type="button" value="9" onclick="calc.keystroke(this)"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input class="calc-button" type="button" value="0" onclick="calc.keystroke(this)"</td>
+                    <td><input class="calc-button" type="button" value="=" onclick="calc.eql();"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
-        </td>
-        <td>
-            <input type="button" value="-"
-                onclick="counter.minus()">
-        </td>
-        <td>
-
-            <input type="button" value="AC"
-                onclick="counter.ac()">
-        </td>
-    </tr>
-    <tr>
-        <td>
-                <input class="b1" type="button" value="1"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="2"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="3"
-                onclick="counter.keystroke(this)">
-        </td>
-
-    </tr>
-    <tr>
-        <td>
-                <input class="b1" type="button" value="4"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="5"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="6"
-                onclick="counter.keystroke(this)">
-        </td>
-
-    </tr>
-    <tr>
-        <td>
-                <input class="b1" type="button" value="7"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="8"
-                onclick="counter.keystroke(this)">
-        </td>
-        <td>
-                <input class="b1" type="button" value="9"
-                onclick="counter.keystroke(this)">
-        </td>
-
-    </tr>
-</table>
+    <!-- calculator script -->
+    <script src="scripts/calculator.js" type="text/javascript"></script>
+</body>
 </html>
