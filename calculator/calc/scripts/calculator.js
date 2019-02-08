@@ -2,8 +2,8 @@
  * A simple calculator implementation.
  * To make this app useful, it should be re-
  * written as a stack machine.
- * TODO: fix bugs! Only first digit of a second
- * number gets added.
+ * TODO: fix bugs! Only last digit of a second
+ * number (number after the operator) gets added.
  */
 let calc = {
     value: 0,
