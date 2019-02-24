@@ -1,3 +1,9 @@
+/*
+ * A simple express.js server. Use
+ * `$node server' to run it or
+ * `$nodemon server' to run it without the need to
+ * refresh after every change to the code.
+ */
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path"); /* core module, no install necessary */
@@ -21,12 +27,29 @@ app.use(logger);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-/* set up a static file server */
+/*
+ * Set up a static file server. Static assets override
+ * any routes later in the application, so index.html
+ * gets served from static/ even if a '/' route is
+ * defined.
+ */
 app.use(express.static(path.join(__dirname, "static")));
 
 /* handle requests to '/' */
 app.get("/", (req, res) => {
     res.send(page);
+});
+
+/* handle requests to '/data' */
+const data = {
+    name: "John Doe",
+    age: "43",
+    hobbies: ["football", "golf", "tennis"],
+    friends: ["Jim", "Tom", "Paul"],
+};
+
+app.get("/data", (req, res) => {
+    res.json(data); /* send data as json */
 });
 
 /* listen and server */
