@@ -14,6 +14,8 @@ function deleteUser() {
         }).done((res) => {
             window.location.replace("/");
         });
+        /* somehow, the first redirect does not work */
+        window.location.replace("/");
     } else {
         return false;
     }
