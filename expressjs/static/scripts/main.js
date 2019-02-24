@@ -9,7 +9,8 @@ function deleteUser() {
         /* make ajax request to delete route */
         $.ajax({
             type: "DELETE",
-            url: "/users/delete/"+$(".delete-user").data("id"),
+            /* $(this) because we want the one that was clicked */
+            url: "/users/delete/"+$(this).data("id"),
         }).done((res) => {
             window.location.replace("/");
         });
