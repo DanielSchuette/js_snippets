@@ -28,12 +28,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /*
+ * Include ejs as an html templating engine and
+ * set a view directory to store templates in.
+ */
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "templates"));
+
+/*
  * Set up a static file server. Static assets override
  * any routes later in the application, so index.html
  * gets served from static/ even if a '/' route is
- * defined.
+ * defined. Also, static files for ejs templates need
+ * to be served, too!
  */
 app.use(express.static(path.join(__dirname, "static")));
+app.use(express.static(path.join(__dirname, "templates/static")));
 
 /* handle requests to '/' */
 app.get("/", (req, res) => {
@@ -47,6 +56,12 @@ const data = {
     hobbies: ["football", "golf", "tennis"],
     friends: ["Jim", "Tom", "Paul"],
 };
+
+/* handle server-side rendering of ejs templates */
+app.get("/template", (req, res) => {
+    const vars = { title: "This is a second, dynamic title" };
+    res.render("index.ejs", vars);
+});
 
 app.get("/data", (req, res) => {
     res.json(data); /* send data as json */
