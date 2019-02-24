@@ -1,15 +1,17 @@
 {
-  "name": "expressjs",
-  "version": "1.0.0",
+  "name": "expressjs-test-server",
+  "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "up": "nodemon server.js || echo \"Error: 'npm install nodemon' or run with 'node server'\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["express.js", "server", "restful api"],
+  "author": "Daniel Schuette",
+  "license": "MIT",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "node-fetch": "^2.3.0"
   }
