@@ -1,2 +1,4 @@
 # pycache files
 __pycache__/
+node_modules/
+.git/
