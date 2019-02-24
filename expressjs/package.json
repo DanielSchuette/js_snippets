@@ -7,12 +7,18 @@
     "up": "nodemon server.js || echo \"Error: 'npm install nodemon' or run with 'node server'\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["express.js", "server", "restful api"],
+  "keywords": [
+    "express.js",
+    "server",
+    "restful api"
+  ],
   "author": "Daniel Schuette",
   "license": "MIT",
   "dependencies": {
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-validator": "^5.3.1",
+    "mongojs": "^2.6.0",
     "node-fetch": "^2.3.0"
   }
 }

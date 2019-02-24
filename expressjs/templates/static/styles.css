@@ -9,6 +9,11 @@ body {
     font-family: sans-serif;
 }
 
+.title__success {
+    text-align: center;
+    color: darkred;
+}
+
 ul {
     text-align: center;
     font-size: 24px;
